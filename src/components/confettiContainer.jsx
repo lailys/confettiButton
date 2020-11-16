@@ -1,10 +1,6 @@
 import React, { PureComponent } from "react"
 import styled from "styled-components"
-import Square from "./square"
-import Circle from "./circle"
-import Triangle from "./triangle"
-import Squiggle from "./squiggle"
-import { RandomNumbergenerator } from "../../helper/helpers"
+import ClapSvg from "./clapSvg"
 
 class ConfettiContainer extends PureComponent {
   constructor() {
@@ -13,11 +9,9 @@ class ConfettiContainer extends PureComponent {
   }
   renderConfettiShapes() {
     const addedShapes = []
-    const shapes = [Square, Circle, Triangle, Squiggle]
     let density = this.props.density
     while (density--) {
-      const Shape = shapes[RandomNumbergenerator(0, 4)]
-      addedShapes.push(<Shape key={density} />)
+      addedShapes.push(<ClapSvg key={density} />)
     }
     return <>{addedShapes}</>
   }
@@ -26,12 +20,14 @@ class ConfettiContainer extends PureComponent {
   }
 }
 const Container = styled.div`
+  background: yellow;
   margin: 0;
   padding: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
 `
 export default ConfettiContainer

@@ -47,10 +47,7 @@ class ToggleConfetti extends PureComponent {
     return (
       <Container>
         {confettiContainer.map(container => (
-          <ConfettiContainer
-            key={container}
-            density={Math.floor(window.innerWidth / 10)}
-          />
+          <ConfettiContainer key={container} density={150} />
         ))}
         <ClapBtn onClick={e => this.toggleConfettiHandler(e)}>
           <Clap />
@@ -63,20 +60,25 @@ class ToggleConfetti extends PureComponent {
 const Container = styled.div`
   margin: 0;
   padding: 0;
+  overflow: hidden;
   position: relative;
-  width: 100%;
-  height: 100%;
+  top: calc(50vh - 250px);
+  left: calc(50vw - 300px);
+  border: 1px solid #c7c2c2af;
+  border-radius: 20px;
+  width: 600px;
+  height: 500px;
 `
 const ClapBtn = styled.div`
+  background: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
-  top: 45%;
-  left: 45%;
-  border: 1px solid #f27c42;
-  border-radius: 50%;
-  width: 8vmin;
-  height: 8vmin;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 50% 50% 0 50%;
+  width: 60px;
+  height: 60px;
 `
 export default ToggleConfetti

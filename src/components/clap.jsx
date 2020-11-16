@@ -5,13 +5,13 @@ class Clap extends Component {
   constructor() {
     super()
     this.state = {
-      hoverColor: "#37352F",
+      hoverColor: "#ACACAC",
     }
     this.changeColor = this.changeColor.bind(this)
   }
   changeColor(e, mouse) {
     this.setState({
-      hoverColor: mouse === "on" ? "#F27C42" : "#37352F",
+      hoverColor: mouse === "on" ? "#F27C42" : "#ACACAC",
     })
   }
   render() {
@@ -20,6 +20,7 @@ class Clap extends Component {
     const { hoverColor } = this.state
     return (
       <Container
+        hoverColor={hoverColor}
         size={size}
         onMouseOver={e => changeColor(e, "on")}
         onMouseLeave={e => changeColor(e, "off")}
@@ -187,11 +188,12 @@ class Clap extends Component {
 
 const Container = styled.div`
   margin: 0;
-  padding: 0;
+  padding: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  border: ${props => `1px solid ${props.hoverColor}`};
   width: ${props => props.size}vh;
   height: ${props => props.size}vh;
 `
