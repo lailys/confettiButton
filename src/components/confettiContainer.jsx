@@ -20,7 +20,7 @@ class ConfettiContainer extends PureComponent {
   }
 }
 const Container = styled.div`
-  background: yellow;
+  // background: yellow;
   margin: 0;
   padding: 0;
   position: absolute;

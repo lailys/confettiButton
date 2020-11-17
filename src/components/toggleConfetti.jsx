@@ -72,13 +72,13 @@ const Container = styled.div`
 const ClapBtn = styled.div`
   background: white;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   position: absolute;
   bottom: 0;
   right: 0;
-  border-radius: 50% 50% 0 50%;
-  width: 60px;
-  height: 60px;
+  border-radius: 50% 40% 10% 40%;
+  width: 70px;
+  height: 70px;
 `
 export default ToggleConfetti

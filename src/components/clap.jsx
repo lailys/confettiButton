@@ -188,7 +188,7 @@ class Clap extends Component {
 
 const Container = styled.div`
   margin: 0;
-  padding: 12px;
+  padding: 14px;
   display: flex;
   align-items: center;
   justify-content: center;

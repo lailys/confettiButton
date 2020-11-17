@@ -11,12 +11,13 @@ class ClapSvg extends PureComponent {
       color: COLORS[RandomNumbergenerator(0, 6)],
     }
     this.style = {
-      transform: `rotateZ(${RandomNumbergenerator(0, 60)})`,
+      // transform: `rotateZ(${RandomNumbergenerator(0, 60)})`,
       position: " absolute",
-      transition: "all 5s ease-out",
+      transition: "all 6s ease-out",
+      transitionDelay: RandomNumbergenerator(0, 1) + "s",
       visibility: "visible",
-      right: RandomNumbergenerator(-200, 50),
-      bottom: RandomNumbergenerator(-200, 50),
+      right: RandomNumbergenerator(-200, 70),
+      bottom: RandomNumbergenerator(-200, 70),
     }
   }
   componentDidMount() {
@@ -25,15 +26,15 @@ class ClapSvg extends PureComponent {
       const node = ReactDOM.findDOMNode(this.ref)
       const index = RandomNumbergenerator(0, 2)
       if (index === 0) {
-        node.style.bottom = bottom + RandomNumbergenerator(0, 450) + "px"
-        node.style.right = right + 500 + "px"
+        node.style.bottom = bottom + RandomNumbergenerator(0, 700) + "px"
+        node.style.right = right + 800 + "px"
       }
       if (index === 1) {
-        node.style.bottom = bottom + 400 + "px"
-        node.style.right = right + RandomNumbergenerator(0, 550) + "px"
+        node.style.bottom = bottom + 700 + "px"
+        node.style.right = right + RandomNumbergenerator(0, 800) + "px"
       }
-      node.style.visibility = "hidden"
-    }, 0)
+      // node.style.visibility = "hidden"
+    }, 5)
   }
   render() {
     const { size, color } = this.state
